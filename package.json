@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "generate-config": "node scripts/generate-config.js",
+    "build": "npm run generate-config && tsc",
+    "dev": "npm run generate-config && tsc --watch",
+    "prepare-pages": "npm run build && node scripts/prepare-pages.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

@@ -1,3 +1,8 @@
 node_modules
 *.log
 .DS_Store
+.env
+_site
+dist
+docs
+src/config.ts
