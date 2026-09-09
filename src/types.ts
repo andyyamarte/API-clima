@@ -3,6 +3,10 @@ export interface WeatherResponse {
   main: {
     temp: number;
     humidity: number;
+    feels_like: number;
+    pressure: number;
+    temp_max: number;
+    temp_min: number;
   };
   weather: {
     main: string;

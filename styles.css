@@ -13,12 +13,15 @@ body {
 }
 
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(101, 98, 98);
 }
 
 .card {
   width: 90%;
-  max-width: 25rem;
+  max-width: 27rem;
   background-color: rgba(87, 87, 190, 0.761);
   color: white;
   margin: 3.125rem auto 0rem;
@@ -68,15 +71,21 @@ body {
   margin-top: 1.875rem;
 }
 
+.weather img {
+  filter: drop-shadow(4px 4px 8px rgba(0, 0, 0, 0.4));
+}
+
 .weather h1 {
   font-size: 4rem;
   font-weight: 500;
+  text-shadow: 2px 2px #e23535;
 }
 .weather h2 {
   font-size: 2.8125rem;
   font-weight: 500;
   margin-top: -0.625rem;
   color: rgb(237, 142, 142);
+  text-shadow: 2px 2px #7b00ff;
 }
 
 .details {
@@ -100,10 +109,41 @@ body {
 }
 
 .humidity,
-.wind {
-  font-size: 1.75rem;
+.wind,
+.feelLike,
+.pressure,
+.temp_max,
+.temp_min {
+  font-size: 1.3rem;
   margin-top: -0.375rem;
 }
+
+.legenda {
+  margin: 0px 5px;
+}
+
+.detailsdos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  margin-top: 3.125rem;
+  color: rgb(237, 246, 158);
+}
+.detailsdos .col img,
+.detailstres .col img {
+  filter: brightness(0) invert(1);
+}
+
+.detailstres {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.25rem;
+  margin-top: 3.125rem;
+  color: rgb(237, 246, 158);
+}
+
 .weather {
   display: none;
 }

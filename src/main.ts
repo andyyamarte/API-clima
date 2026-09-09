@@ -7,6 +7,9 @@ const searchBtn =
 const weatherIcon = document.querySelector<HTMLImageElement>(".weather-icon");
 const weather = document.querySelector<HTMLElement>(".weather");
 const errorMessage = document.querySelector<HTMLElement>(".error");
+const feelLike = document.querySelector<HTMLElement>(".feelLike");
+const temp_max = document.querySelector<HTMLElement>(".temp_max");
+const temp_min = document.querySelector<HTMLElement>(".temp_min");
 
 async function checkWeather(city: string) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
@@ -24,6 +27,12 @@ function updateWeatherUI(data: WeatherResponse) {
   document.querySelector(".city")!.innerHTML = data.name;
   document.querySelector(".humidity")!.innerHTML = `${data.main.humidity}%`;
   document.querySelector(".wind")!.innerHTML = `${data.wind.speed}Km/h`;
+  document.querySelector(".feelLike")!.innerHTML =
+    `${Math.round(data.main.feels_like)}&deg;C`;
+  document.querySelector(".temp_max")!.innerHTML =
+    `${Math.round(data.main.temp_max)}&deg;C`;
+  document.querySelector(".temp_min")!.innerHTML =
+    `${Math.round(data.main.temp_min)}&deg;C`;
 
   const weatherIcons: Record<string, string> = {
     Clear: "src/assets/clear.png" /*aquipuede que tenga el error */,
