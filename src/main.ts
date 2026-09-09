@@ -1,4 +1,5 @@
 import type { WeatherResponse } from "./types";
+import { API_KEY } from "./config.js";
 
 const inputBox = document.querySelector<HTMLInputElement>(".search-bar input")!;
 const searchBtn =
@@ -8,9 +9,7 @@ const weather = document.querySelector<HTMLElement>(".weather");
 const errorMessage = document.querySelector<HTMLElement>(".error");
 
 async function checkWeather(city: string) {
-  const apiKey = "e44592f2c2292c3cc55468f9775b0f62";
-
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
   const response = await fetch(apiUrl);
   const data: WeatherResponse = await response.json();

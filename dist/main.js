@@ -1,11 +1,11 @@
+import { API_KEY } from "./config.js";
 const inputBox = document.querySelector(".search-bar input");
 const searchBtn = document.querySelector(".search-bar button");
 const weatherIcon = document.querySelector(".weather-icon");
 const weather = document.querySelector(".weather");
 const errorMessage = document.querySelector(".error");
 async function checkWeather(city) {
-    const apiKey = "e44592f2c2292c3cc55468f9775b0f62";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
     const response = await fetch(apiUrl);
     const data = await response.json();
     console.log(data);
@@ -35,5 +35,4 @@ inputBox.addEventListener("keydown", (event) => {
         checkWeather(inputBox.value);
     }
 });
-export {};
 //# sourceMappingURL=main.js.map
